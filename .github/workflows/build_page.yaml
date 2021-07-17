@@ -1,0 +1,24 @@
+name: "Build & Publish Page"
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  TZ: Europe/Berlin
+
+jobs:
+  build_page:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Build Page"
+        run: |
+          sudo apt-get install --yes pandoc
+          make docs
+      - name: "Publish Page"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
