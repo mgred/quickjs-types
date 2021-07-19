@@ -7,8 +7,7 @@
 Add a submodule to a project, e.g. `types/quickjs`:
 
 ```bash
-mkdir -p types/quickjs
-git submodule add htts://github.com/mgred/quickjs-types types/quickjs
+git submodule add git@github.com:mgred/quickjs-types.git types/quickjs
 ```
 
 Extend `tsconfig.json` to use types:
