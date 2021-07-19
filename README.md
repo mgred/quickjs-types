@@ -15,8 +15,7 @@ Extend `tsconfig.json` to use types:
 ```json
 {
   "compilerOptions": {
-    "typeRoots": ["types"],
-    "types": ["quickjs"]
+    "typeRoots": ["types"]
   }
 }
 ```
