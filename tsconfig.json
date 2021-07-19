@@ -11,5 +11,5 @@
     "noImplicitThis": true,
     "baseUrl": "."
   },
-  "files": ["globals.d.ts", "os.d.ts", "std.d.ts", "test.ts"]
+  "files": ["globals.d.ts", "index.d.ts", "os.d.ts", "std.d.ts", "test.ts"]
 }
