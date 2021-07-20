@@ -35,5 +35,5 @@ tsc -p .
 
 ## Todos
 
-- Add more tests
-- Add more documentation (comments)
+- [ ] Add more tests
+- [ ] Add more documentation (comments)
