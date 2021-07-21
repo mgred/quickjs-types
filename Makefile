@@ -6,6 +6,12 @@ HEADER=$(DOCS)/header.html
 INDEX=$(DOCS)/index.html
 STYLES=$(DOCS)/styles.css
 
+PANDOC=pandoc
+
+ifdef PANDOC_DOCKER
+	PANDOC=docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/core:latest
+endif
+
 $(DOCS): $(shell mkdir -p $(DOCS))
 $(DOCS): $(INDEX)
 
@@ -22,7 +28,7 @@ $(HEADER):
 		</p>" > $@
 
 $(INDEX): $(README) $(HEADER) $(FOOTER) $(STYLES)
-	@pandoc \
+	@$(PANDOC) \
 		--css $(notdir $(STYLES)) \
 		--from gfm \
 		--include-after-body $(FOOTER) \

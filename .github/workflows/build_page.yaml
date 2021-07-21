@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "Build Page"
-        run: |
-          sudo apt-get install --yes pandoc
-          make docs
+        env:
+          PANDOC_DOCKER: 1
+        run: make docs
       - name: "Publish Page"
         uses: peaceiris/actions-gh-pages@v3
         with:
