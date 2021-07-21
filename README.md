@@ -31,7 +31,7 @@ tsc -p .
 
 ## License
 
-[GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
+Code in this repository is licensed under the [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 ## Todos
 
