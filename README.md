@@ -2,6 +2,11 @@
 
 > TypeScript definitions for the QuickJS Engine!
 
+&nbsp; <!-- Create some extra space -->
+
+[![Build & Publish Page](https://github.com/mgred/quickjs-types/actions/workflows/build_page.yaml/badge.svg?branch=main)](https://github.com/mgred/quickjs-types/actions/workflows/build_page.yaml)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
 ## Usage
 
 Add a submodule to a project, e.g. `types/quickjs`:
