@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "Makefile"
+      - "README.md"
+      - ".github/workflows/build_page.yaml"
 
 env:
   TZ: Europe/Berlin
