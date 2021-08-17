@@ -97,4 +97,9 @@ declare module "std" {
     options: { full: true; binary?: false }
   ): ArrayBuffer;
   export function parseExtJSON(str: string): any;
+
+  const _in: File;
+  export { _in as in };
+  export const err: File;
+  export const out: File;
 }
