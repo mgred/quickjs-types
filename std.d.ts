@@ -1,5 +1,5 @@
 declare module "std" {
-  import { File, OSOperationResult } from "os";
+  import { File } from "os";
 
   export interface EvalOptions {
     backtrace_barrier?: boolean;
@@ -57,18 +57,18 @@ declare module "std" {
     filename: string,
     flags: unknown,
     errorObj?: ErrorOptions
-  ): OSOperationResult;
+  ): File | null;
   export function popen(
     command: string,
     flags: unknown,
     errorObj?: ErrorOptions
-  ): OSOperationResult;
+  ): File | null;
   export function fdopen(
     file: File,
     flags: unknown,
     errorObj?: ErrorOptions
-  ): OSOperationResult;
-  export function tmpFile(errorObj?: ErrorOptions): OSOperationResult;
+  ): File | null;
+  export function tmpFile(errorObj?: ErrorOptions): File | null;
   export function puts(str: string): void;
   export function printf(fmt: string, ...args: any[]): void;
   export function sprintf(fmt: string, ...args: any[]): void;
