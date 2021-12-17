@@ -102,6 +102,7 @@ declare module "os" {
   export function rename(oldname: string, newname: string): OSOperationResult;
   export function realpath(path: string): OSOperationTuple;
   export function getcwd(): OSOperationTuple;
+  export function chdir(path: string): OSOperationResult;
   export function mkdir(path: string, mode?: string): OSOperationResult;
   export function stat(path: string): [status: FileStatus, error: Error];
   export function lstat(path: string): [status: FileStatus, error: Error];
