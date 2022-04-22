@@ -114,10 +114,10 @@ declare module "os" {
   export function symlink(target: string, linkpath: string): OSOperationResult;
   export function readlink(path: string): OSOperationTuple;
   export function readdir(path: string): [files: string[], error: Error];
-  export function setReadHandle(file: File, cb: Callback | null): void;
-  export function setReadHandle(file: File, cb: null): void;
-  export function setWriteHandle(file: File, cb: Callback): void;
-  export function setWriteHandle(file: File, cb: null): void;
+  export function setReadHandler(file: File, cb: Callback | null): void;
+  export function setReadHandler(file: File, cb: null): void;
+  export function setWriteHandler(file: File, cb: Callback): void;
+  export function setWriteHandler(file: File, cb: null): void;
   export function signal(signal: number, cb: Callback): void;
   export function signal(signal: number, cb: null): void;
   export function signal(signal: number, cb: undefined): void;
