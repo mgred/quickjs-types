@@ -1,3 +1,4 @@
+TYPES=$(wildcard *.d.ts)
 DOCS=docs
 README=README.md
 
@@ -5,6 +6,8 @@ FOOTER=$(DOCS)/footer.html
 HEADER=$(DOCS)/header.html
 INDEX=$(DOCS)/index.html
 STYLES=$(DOCS)/styles.css
+
+ARTIFACT=quickjs-types.tar.gz
 
 PANDOC=pandoc
 
@@ -43,6 +46,10 @@ $(STYLES):
 	@curl -s -L https://gist.githubusercontent.com/killercup/5917178/raw/40840de5352083adb2693dc742e9f75dbb18650f/pandoc.css \
 		> $@
 
+release: $(ARTIFACT)
+$(ARTIFACT): $(TYPES) $(README) LICENSE package.json
+	tar cf $@ $?
+
 .PHONY: clean
 clean:
-	rm -rf docs
+	rm -rf $(DOCS) *.tgz *.tar.gz
