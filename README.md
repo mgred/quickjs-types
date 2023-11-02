@@ -14,7 +14,7 @@
 Add using a package manager, e.g.: npm
 
 ```bash
-npm i quickjs-types
+npm i -D quickjs-types
 ```
 
 Add types to `tsconfig.json`:
