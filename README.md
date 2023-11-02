@@ -9,6 +9,26 @@
 
 ## Usage
 
+### Node
+
+Add using a package manager, e.g.: npm
+
+```bash
+npm i quickjs-types
+```
+
+Add types to `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "types": ["quickjs-types"]
+  }
+}
+```
+
+### Git Submodule
+
 Add a submodule to a project, e.g. `types/quickjs`:
 
 ```bash
