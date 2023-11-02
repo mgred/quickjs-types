@@ -46,7 +46,12 @@ $(STYLES):
 	@curl -s -L https://gist.githubusercontent.com/killercup/5917178/raw/40840de5352083adb2693dc742e9f75dbb18650f/pandoc.css \
 		> $@
 
-release: $(ARTIFACT)
+.PHONY: test
+test:
+	tsc -p .
+
+.PHONY: release
+release: test $(ARTIFACT)
 $(ARTIFACT): $(TYPES) $(README) LICENSE package.json
 	tar cf $@ $?
 
