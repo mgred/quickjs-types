@@ -8,5 +8,9 @@
     "*.d.ts",
     "LICENSE",
     "README.md"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgred/quickjs-types"
+  },
 }
