@@ -11,6 +11,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgred/quickjs-types"
+    "url": "git+https://github.com/mgred/quickjs-types.git"
   }
 }
