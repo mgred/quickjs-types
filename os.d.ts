@@ -59,22 +59,30 @@ declare module "os" {
     static parent: Worker;
     constructor(filename: string);
     postMessage(msg: any): void;
-    onmessage: (data: any) => void;
+    onmessage: (data: any) => void | null;
   }
 
-  export const SIGINT: number;
-  export const SIGABRT: number;
-  export const SIGFPE: number;
-  export const SIGILL: number;
-  export const SIGSEGV: number;
-  export const SIGTERM: number;
+  export const SIGINT: 2;
+  export const SIGABRT: 6;
+  export const SIGFPE: 8;
+  export const SIGILL: 4;
+  export const SIGSEGV: 11;
+  export const SIGTERM: 15;
 
-  export const WNOHANG: number;
+  export const WNOHANG: 1;
 
-  export const platform: string;
+  export const platform: "linux" | "darwin" | "win32" | "js";
 
-  export function open(filename: string): File | -1;
-  export function close(file: File): void;
+  export const O_RDONLY: 0;
+  export const O_WRONLY: 1;
+  export const O_RDWR: 2;
+  export const O_CREAT: 64;
+  export const O_EXCL: 128;
+  export const O_TRUNC: 512;
+  export const O_APPEND: 1024;
+
+  export function open(filename: string, flag: number, mode?: unknown): File | -1;
+  export function close(file: File): number;
   export function seek(file: File, offset: number, whence: Seek): number;
   export function seek(
     file: File,
