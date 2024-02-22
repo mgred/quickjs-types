@@ -52,7 +52,7 @@ declare module "os" {
     stderr?: File;
     env?: { readonly [key: string]: string };
     uid?: number;
-    git?: number;
+    gid?: number;
   }
 
   export class Worker {
