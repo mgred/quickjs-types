@@ -3,7 +3,7 @@ declare module "os" {
 
   type Success = 0;
   type OSOperationResult = Success | Error;
-  type OSOperationTuple = [str: string, error: Error];
+  type OSOperationTuple = [str: string, error: OSOperationResult];
   type Callback = () => any;
   type TimeoutHandle = number;
 
