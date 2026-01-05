@@ -63,7 +63,7 @@ declare module "os" {
   }
 
   export const SIGINT: 2;
-  export const SIGABRT: 6;
+  export const SIGABRT: 22;
   export const SIGFPE: 8;
   export const SIGILL: 4;
   export const SIGSEGV: 11;
@@ -76,19 +76,28 @@ declare module "os" {
   export const O_RDONLY: 0;
   export const O_WRONLY: 1;
   export const O_RDWR: 2;
-  export const O_CREAT: 64;
-  export const O_EXCL: 128;
+  export const O_CREAT: 256;
+  export const O_EXCL: 1024;
   export const O_TRUNC: 512;
-  export const O_APPEND: 1024;
+  export const O_APPEND: 8;
+  export const O_TEXT: 16384;
+  export const O_BINARY: 32768;
 
-  export function open(filename: string, flag: number, mode?: unknown): File | -1;
+  export const S_IFMT: 61440;
+  export const S_IFIFO: 4096;
+  export const S_IFCHR: 8192;
+  export const S_IFDIR: 16384;
+  export const S_IFBLK: 24576;
+  export const S_IFREG: 32768;
+
+  export function open(
+    filename: string,
+    flag: number,
+    mode?: unknown
+  ): File | -1;
   export function close(file: File): number;
   export function seek(file: File, offset: number, whence: Seek): number;
-  export function seek(
-    file: File,
-    offset: BigInt,
-    whence: Seek
-  ): BigInt;
+  export function seek(file: File, offset: BigInt, whence: Seek): BigInt;
   export function read(
     file: File,
     buffer: ArrayBuffer,
@@ -139,6 +148,8 @@ declare module "os" {
   export function dup2(oldFile: File, newFile: File): void;
   export function pipe(): [readFile: File, writeFile: File] | null;
   export function sleep(delay: number): void;
+  export function sleepAsync(delay: number): Promise<void>;
   export function setTimeout(cb: Callback, delay: number): TimeoutHandle;
   export function clearTimeout(handle: TimeoutHandle): void;
+  export function now(): number;
 }

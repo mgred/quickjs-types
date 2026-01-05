@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "lib": ["ES2020"],
+    "target": "es2023",
+    "module": "esnext",
+    "lib": ["ES2023"],
     "noEmit": true,
     "strict": true,
     "noImplicitAny": true,

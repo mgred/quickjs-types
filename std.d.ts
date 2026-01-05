@@ -1,10 +1,6 @@
 declare module "std" {
   import { File } from "os";
 
-  export interface EvalOptions {
-    backtrace_barrier?: boolean;
-  }
-
   export interface ErrorOptions {
     errorno: Error;
   }
@@ -50,7 +46,14 @@ declare module "std" {
   }
 
   export function exit(n: number): void;
-  export function evalScript(script: string, options?: EvalOptions): void;
+  export function evalScript(
+    script: string,
+    options?: { backtrace_barrier?: boolean; async?: false }
+  ): any;
+  export function evalScript(
+    script: string,
+    options?: { backtrace_barrier?: boolean; async?: true }
+  ): Promise<{ value: any }>;
   export function loadScript(filename: string): void;
   export function loadFile(filename: string): void;
   export function open(
@@ -75,7 +78,7 @@ declare module "std" {
 
   export function strerror(errorno: Error): string;
   export function gc(): void;
-  export function getenv(name: string): any | undefined;
+  export function getenv(name: string): string | undefined;
   export function setenv(name: string, value: any): void;
   export function unsetenv(name: string): void;
   export function getenviron(): { readonly [key: string]: string };
