@@ -140,6 +140,7 @@ declare module "os" {
   export function signal(signal: number, cb: undefined): void;
   export function kill(pid: number, signal: number): void;
   export function exec(args: string[], options?: ExecOptions): number;
+  export function getpid(): number;
   export function waitpid(
     pid: number,
     options: number

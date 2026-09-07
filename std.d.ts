@@ -55,7 +55,7 @@ declare module "std" {
     options?: { backtrace_barrier?: boolean; async?: true }
   ): Promise<{ value: any }>;
   export function loadScript(filename: string): void;
-  export function loadFile(filename: string): void;
+  export function loadFile(filename: string): string | null;
   export function open(
     filename: string,
     flags: unknown,
@@ -74,7 +74,7 @@ declare module "std" {
   export function tmpFile(errorObj?: ErrorOptions): File | null;
   export function puts(str: string): void;
   export function printf(fmt: string, ...args: any[]): void;
-  export function sprintf(fmt: string, ...args: any[]): void;
+  export function sprintf(fmt: string, ...args: any[]): string;
 
   export function strerror(errorno: Error): string;
   export function gc(): void;
